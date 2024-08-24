@@ -23,6 +23,11 @@
     text-decoration: none;
     border: none;
     outline: none;
+    transition: 0.3s;
+
+    &:hover {
+        scale: 1.1;
+    }
 }
 
 .multi-btn span svg {
@@ -313,10 +318,99 @@
     font-size: 1.7rem;
 }
 
+.social-box .home-social-icon a svg {
+    transition: 0.3s;
+
+    &:hover {
+        scale: 1.2;
+        color: #b9b9c0;
+    }
+}
+
+
 .cv-btn-box {
     position: absolute;
     bottom: 3rem;
     left: 45%;
+}
+
+/* PROJECT SECTION  */
+
+.project-section {
+    padding: 0 3rem;
+    background-color: #fafafa;
+}
+
+.project-heading {
+    margin-top: 4px;
+    margin-bottom: 3rem;
+}
+
+.project-heading span {
+    color: rgb(255 164 5);
+}
+
+.project-content-parent-box {
+    margin-bottom: 4rem;
+}
+
+.project-centent-heading a {
+    text-decoration: none;
+}
+
+.project-centent-heading a svg {
+    font-size: 1.5rem;
+    margin-bottom: 4px;
+}
+
+.project-centent-sub-heading {
+    font-size: 1.1rem;
+}
+
+.project-content-description {
+    font-size: 0.9rem;
+}
+
+.project-used-technology-box {
+    flex-wrap: wrap;
+}
+
+.project-used-technology-text {
+    padding: 5px 10px;
+    border: 1px solid #bfbfbf;
+    border-radius: 15px;
+    font-size: 0.8rem;
+}
+
+
+.project-img-parent-box {
+    margin-bottom: 4rem;
+}
+
+.project-img-box {
+    max-width: 365px;
+    height: 245px;
+    mix-blend-mode: multiply;
+}
+
+.project-img-box img {
+    width: 100%;
+    height: 100%;
+    transition: 0.3s;
+
+    &:hover {
+        scale: 1.1;
+    }
+}
+
+
+
+@media(min-width:425px) {
+    .project-heading span {
+        padding: 0.4rem 0.5rem;
+        border: 2px solid;
+        border-radius: 7px;
+    }
 }
 
 @media(max-width:1024px) {
@@ -334,6 +428,24 @@
 
     .cv-btn-box {
         left: 38%;
+    }
+
+    /* project section  */
+    .project-section {
+        padding: 0 2rem;
+    }
+
+    .project-img-parent-box {
+        justify-content: center;
+        margin-bottom: 1rem;
+    }
+
+    .project-img-box {
+        height: 200px;
+    }
+
+    .project-content-parent-box {
+        margin-bottom: 3rem;
     }
 }
 
@@ -364,6 +476,15 @@
 
     .cv-btn-box {
         left: 30%;
+    }
+
+    /* project section  */
+    .project-heading {
+        margin-bottom: 1.5rem;
+    }
+
+    .project-section {
+        padding: 0 1rem;
     }
 }
 
