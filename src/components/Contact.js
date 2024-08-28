@@ -48,7 +48,7 @@ const Contact = () => {
 
 
     return (
-        <div className="contact-section">
+        <div className="contact-section overflow-hidden">
             <div className="card contact-card" id="contact-container">
                 <div className="row g-0">
                     <div className="col-md-5">
