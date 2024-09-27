@@ -12,6 +12,7 @@ function App() {
       <Project />
       <Contact />
       <Footer />
+      {/* <About/> */}
     </>
   );
 }

@@ -20,30 +20,32 @@ const Contact = () => {
 
     const handleClick = (evt) => {
         evt.preventDefault();
-        console.log(formData);
 
+        if (formData.name && formData.email && formData.message) {
+            window.Email.send({
+                SecureToken: "77a3e194-71dc-481a-990b-1f6eb7759b76",
+                To: 'badrinarayan295@gmail.com',
+                From: "badrinarayan295@gmail.com",
+                Subject: "Client Enquiry",
+                Body: `Name: ${formData.fullName} Email: ${formData.email} Subject: ${formData.message}`
+            }).then(
+                () => {
+                    setIsVisible(true)
+                }
+            );
 
-        window.Email.send({
-            SecureToken: "77a3e194-71dc-481a-990b-1f6eb7759b76",
-            To: 'badrinarayan295@gmail.com',
-            From: "badrinarayan295@gmail.com",
-            Subject: "Client Enquiry",
-            Body: `Name: ${formData.fullName} Email: ${formData.email} Subject: ${formData.message}`
-        }).then(
-            () => {
-                setIsVisible(true)
-            }
-        );
+            setFormData({
+                name: "",
+                email: "",
+                message: ""
+            })
 
-        setFormData({
-            name: "",
-            email: "",
-            message: ""
-        })
-
-        setTimeout(() => {
-            setIsVisible(false)
-        }, 3000);
+            setTimeout(() => {
+                setIsVisible(false)
+            }, 3000);
+        } else {
+            console.log("Please fill the detail");
+        }
     }
 
 
@@ -61,18 +63,18 @@ const Contact = () => {
                             <div className="row g-2">
                                 <div className="col-md">
                                     <div className="form-floating contact-input-box">
-                                        <input type="text" className="form-control bg-transparent" id="floatingInputGrid" placeholder="Full Name" name="name" value={formData.name} onChange={handleChange} />
+                                        <input type="text" className="form-control bg-transparent" id="floatingInputGrid" placeholder="Full Name" name="name" value={formData.name} onChange={handleChange} required/>
                                         <label htmlFor="floatingInputGrid bg-transparent ">Full Name</label>
                                     </div>
                                 </div>
                                 <div className="col-md">
                                     <div className="form-floating contact-input-box">
-                                        <input type="email" className="form-control bg-transparent" id="floatingInputGrid" placeholder="name@example.com" name="email" value={formData.email} onChange={handleChange} />
+                                        <input type="email" className="form-control bg-transparent" id="floatingInputGrid" placeholder="name@example.com" name="email" value={formData.email} onChange={handleChange} required/>
                                         <label htmlFor="floatingInputGrid bg-transparent ">Email</label>
                                     </div>
                                 </div>
                                 <div className="form-floating contact-input-box">
-                                    <textarea className="form-control bg-transparent" placeholder="Leave a comment here" id="floatingTextarea2" style={{ height: '150px' }} name="message" value={formData.message} onChange={handleChange}></textarea>
+                                    <textarea className="form-control bg-transparent" placeholder="Leave a comment here" id="floatingTextarea2" style={{ height: '150px' }} name="message" value={formData.message} onChange={handleChange} required></textarea>
                                     <label htmlFor="floatingTextarea2 bg-transparent">Message</label>
                                 </div>
                             </div>

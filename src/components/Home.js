@@ -4,7 +4,12 @@ import { IoMail } from "react-icons/io5";
 import { FaXTwitter } from "react-icons/fa6";
 import { GrInstagram } from "react-icons/gr";
 
+import { useState } from "react";
+
 const Home = () => {
+    const [showAbout, setShowAbout] = useState(false);
+
+
     return (
         <div className="home-section overflow-hidden">
             <video autoPlay loop muted playsInline className="bg-clip">
@@ -14,9 +19,9 @@ const Home = () => {
                 <div className="hero-content">
                     <h1 className="mb-3">Badri Narayan Thamba</h1>
                     <h4 className="mb-4">Frontend Developer</h4>
-                    <a href="/">
+                    <span onClick={() => setShowAbout(!showAbout)}>
                         <Button name="About Me" />
-                    </a>
+                    </span>
                 </div>
             </div>
             <div className="social-box">
